@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: animles
+  labels:
+    app: animles
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: animles
+  template:
+    metadata:
+      labels:
+        app: animles
+    spec:
+      containers:
+      - name: animles
+        image: supergiantkir/animals:bear
+        ports:
+        - containerPort: 80
+      - name: yanivomc
+        image: yanivomc/spring-music:latest
+        ports:
+        - containerPort: 8080
+...
